@@ -1,9 +1,9 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
+const restart = document.getElementById("restart")
 
-document.addEventListener("keydown", () => {
-    jump();
-})
+
+document.addEventListener("keydown", jump);
 
 function jump() {
     if (!dino.classList.contains("jump")){
@@ -19,6 +19,15 @@ let isAlive = setInterval(() => {
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
 
     if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
-        alert("GAME OVER!!")
+        dino.classList.add("darkened")
+        cactus.classList.add("darkened")
+        cactus.classList.remove("cactus-move")
+        restart.classList.remove("hidden")
+        document.removeEventListener("keydown", jump)
+        // alert("GAME OVER!!")
     }
 }, 10)
+
+function restartGame() {
+    location.reload();
+}

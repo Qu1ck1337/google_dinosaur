@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Pixelate';
+    src: url(fonts/pixelate.otf);
+}
+
+body{
+    font-family: "Pixelate";
+}
+
 .game {
     width: 600px;
     height: 200px;
@@ -22,6 +31,9 @@
     position: relative;
     top: 110px;
     left: 580px;
+}
+
+.cactus-move {
     animation: cactusMove 1s infinite linear;
 }
 
@@ -54,4 +66,33 @@
     100% {
         top: 150px;
     }
+}
+
+#restart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#restart-btn {
+    width: 50px;
+    height: 50px;
+    background-image: url(img/reload_page.png);
+    background-size: cover;
+    border: 0;
+    background-color: transparent;
+}
+
+#restart > h1 {
+    margin: 0;
+}
+
+.darkened {
+    opacity: 30%;
+}
+
+.hidden {
+    opacity: 0;
 }
